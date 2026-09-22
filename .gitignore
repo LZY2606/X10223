@@ -34,3 +34,7 @@ coverage/
 .vite/
 .turbo/
 *.tsbuildinfo
+
+# --- gel-ladder-bench runtime ---
+/data/*.db
+/data/*.db-*
