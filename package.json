@@ -1,0 +1,28 @@
+{
+  "name": "gel-calibration-bench",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "胶道标尺：电泳条带、泳道弯曲与分子量校准工作台",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5342 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 5342 --strictPort",
+    "test": "vitest",
+    "gen:cases": "vite-node tools/gen-cases.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "pngjs": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.10.0",
+    "@types/pngjs": "^6.0.5",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.0",
+    "vite-node": "^3.0.0",
+    "vitest": "^3.0.0"
+  }
+}
