@@ -1,0 +1,17 @@
+{
+  "name": "gel-ladder-workbench",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Offline gel electrophoresis ladder, lane, and band evidence workbench",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "test": "node --test --experimental-strip-types --experimental-sqlite",
+    "cases:generate": "node --experimental-strip-types --experimental-sqlite scripts/generate-case-pack.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vite": "^7.1.10"
+  }
+}
