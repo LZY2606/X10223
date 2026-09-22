@@ -1,0 +1,15 @@
+{
+  "name": "gel-lane-calibrator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "胶道标尺：电泳条带、泳道弯曲与分子量校准工作台（离线）",
+  "scripts": {
+    "postinstall": "node --experimental-strip-types case-pack/scripts/generate-pack.ts || node scripts/generate-pack.mjs",
+    "test": "vitest",
+    "dev": "node --experimental-strip-types server/dev.ts",
+    "start": "node --experimental-strip-types server/prod.ts",
+    "typecheck": "tsc --noEmit",
+    "regenerate-pack": "node --experimental-strip-types case-pack/scripts/generate-pack.ts"
+  }
+}
