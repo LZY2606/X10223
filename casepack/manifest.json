@@ -1,0 +1,962 @@
+{
+  "version": "casepack-2026-09-23-v1",
+  "createdAt": "2026-09-23T03:40:00+09:00",
+  "baseline": {
+    "imageFile": "baseline.png",
+    "imageWidth": 320,
+    "imageHeight": 420,
+    "materials": [
+      {
+        "type": "source-image",
+        "id": "img-baseline",
+        "blobSha256": "3f0d3a7f99f34579f94458d13b8e6e3366b15581538ae4fb7649c3ed4ad5f601",
+        "fileName": "baseline.png",
+        "width": 320,
+        "height": 420,
+        "grayscaleMax": 255,
+        "declaredAt": "2026-09-23T03:40:00+09:00",
+        "provenance": {
+          "materialId": "img-baseline",
+          "fieldPath": "$",
+          "byteOffset": 0,
+          "importedFrom": "baseline.png",
+          "recordedAt": "2026-09-23T03:40:00+09:00",
+          "method": "declared"
+        }
+      },
+      {
+        "type": "capture-orientation",
+        "id": "ori-baseline",
+        "imageId": "img-baseline",
+        "rotationDeclared": 0,
+        "wellsAtDeclared": "top",
+        "provenance": {
+          "materialId": "ori-baseline",
+          "fieldPath": "rotationDeclared",
+          "byteOffset": 0,
+          "importedFrom": "manifest.json",
+          "recordedAt": "2026-09-23T03:40:00+09:00",
+          "method": "declared"
+        }
+      },
+      {
+        "type": "exposure",
+        "id": "exp-baseline",
+        "imageId": "img-baseline",
+        "exposureSecondsRaw": "1/30",
+        "exposureSeconds": 0.03333333333333333,
+        "gainRaw": "ISO200",
+        "gain": 200,
+        "gamma": 2.2,
+        "provenance": {
+          "materialId": "exp-baseline",
+          "fieldPath": "exposureSecondsRaw",
+          "byteOffset": 0,
+          "importedFrom": "manifest.json",
+          "recordedAt": "2026-09-23T03:40:00+09:00",
+          "method": "declared"
+        }
+      },
+      {
+        "type": "ladder-spec",
+        "id": "ladder-ds1k",
+        "name": "DS-1000 demo ladder",
+        "entries": [
+          {
+            "ordinal": 1,
+            "id": "nom-1500",
+            "raw": "1500bp",
+            "nominalBp": 1500,
+            "unit": "bp"
+          },
+          {
+            "ordinal": 2,
+            "id": "nom-1000",
+            "raw": "1000bp",
+            "nominalBp": 1000,
+            "unit": "bp"
+          },
+          {
+            "ordinal": 3,
+            "id": "nom-750",
+            "raw": "750bp",
+            "nominalBp": 750,
+            "unit": "bp"
+          },
+          {
+            "ordinal": 4,
+            "id": "nom-500",
+            "raw": "500bp",
+            "nominalBp": 500,
+            "unit": "bp"
+          },
+          {
+            "ordinal": 5,
+            "id": "nom-300",
+            "raw": "300bp",
+            "nominalBp": 300,
+            "unit": "bp"
+          },
+          {
+            "ordinal": 6,
+            "id": "nom-200",
+            "raw": "200bp",
+            "nominalBp": 200,
+            "unit": "bp"
+          },
+          {
+            "ordinal": 7,
+            "id": "nom-100",
+            "raw": "100bp",
+            "nominalBp": 100,
+            "unit": "bp"
+          },
+          {
+            "ordinal": 8,
+            "id": "nom-50",
+            "raw": "50bp",
+            "nominalBp": 50,
+            "unit": "bp"
+          },
+          {
+            "ordinal": 9,
+            "id": "nom-bad",
+            "raw": "unkn0wn",
+            "nominalBp": null,
+            "unit": "bp",
+            "unusableReason": "无法解析为 bp 数字"
+          }
+        ],
+        "provenance": {
+          "materialId": "ladder-ds1k",
+          "fieldPath": "entries",
+          "byteOffset": 0,
+          "importedFrom": "ladder.csv",
+          "recordedAt": "2026-09-23T03:40:00+09:00",
+          "method": "declared"
+        }
+      },
+      {
+        "type": "lane-geometry",
+        "id": "geo-baseline",
+        "imageId": "img-baseline",
+        "ladderLaneId": "lane-L",
+        "lanes": [
+          {
+            "laneId": "lane-L",
+            "ordinal": 0,
+            "role": "ladder",
+            "points": [
+              {
+                "x": 36,
+                "y": 24
+              },
+              {
+                "x": 36,
+                "y": 396
+              }
+            ],
+            "halfWidthPx": 13,
+            "provenance": {
+              "materialId": "lane-L",
+              "fieldPath": "points",
+              "byteOffset": 100,
+              "importedFrom": "lane-detect.json",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "auto"
+            }
+          },
+          {
+            "laneId": "lane-1",
+            "ordinal": 1,
+            "role": "sample",
+            "sampleName": "Sample 1",
+            "points": [
+              {
+                "x": 72,
+                "y": 24
+              },
+              {
+                "x": 72,
+                "y": 396
+              }
+            ],
+            "halfWidthPx": 13,
+            "provenance": {
+              "materialId": "lane-1",
+              "fieldPath": "points",
+              "byteOffset": 140,
+              "importedFrom": "lane-detect.json",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "auto"
+            }
+          },
+          {
+            "laneId": "lane-2",
+            "ordinal": 2,
+            "role": "sample",
+            "sampleName": "Sample 2",
+            "points": [
+              {
+                "x": 108,
+                "y": 24
+              },
+              {
+                "x": 108,
+                "y": 396
+              }
+            ],
+            "halfWidthPx": 13,
+            "provenance": {
+              "materialId": "lane-2",
+              "fieldPath": "points",
+              "byteOffset": 180,
+              "importedFrom": "lane-detect.json",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "auto"
+            }
+          },
+          {
+            "laneId": "lane-3",
+            "ordinal": 3,
+            "role": "sample",
+            "sampleName": "Sample 3",
+            "points": [
+              {
+                "x": 144,
+                "y": 24
+              },
+              {
+                "x": 144,
+                "y": 396
+              }
+            ],
+            "halfWidthPx": 13,
+            "provenance": {
+              "materialId": "lane-3",
+              "fieldPath": "points",
+              "byteOffset": 220,
+              "importedFrom": "lane-detect.json",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "auto"
+            }
+          },
+          {
+            "laneId": "lane-4",
+            "ordinal": 4,
+            "role": "sample",
+            "sampleName": "Sample 4",
+            "points": [
+              {
+                "x": 180,
+                "y": 24
+              },
+              {
+                "x": 180,
+                "y": 396
+              }
+            ],
+            "halfWidthPx": 13,
+            "provenance": {
+              "materialId": "lane-4",
+              "fieldPath": "points",
+              "byteOffset": 260,
+              "importedFrom": "lane-detect.json",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "auto"
+            }
+          },
+          {
+            "laneId": "lane-5",
+            "ordinal": 5,
+            "role": "sample",
+            "sampleName": "Sample 5",
+            "points": [
+              {
+                "x": 216,
+                "y": 24
+              },
+              {
+                "x": 216,
+                "y": 396
+              }
+            ],
+            "halfWidthPx": 13,
+            "provenance": {
+              "materialId": "lane-5",
+              "fieldPath": "points",
+              "byteOffset": 300,
+              "importedFrom": "lane-detect.json",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "auto"
+            }
+          },
+          {
+            "laneId": "lane-6",
+            "ordinal": 6,
+            "role": "sample",
+            "sampleName": "Sample 6",
+            "points": [
+              {
+                "x": 252,
+                "y": 24
+              },
+              {
+                "x": 252,
+                "y": 396
+              }
+            ],
+            "halfWidthPx": 13,
+            "provenance": {
+              "materialId": "lane-6",
+              "fieldPath": "points",
+              "byteOffset": 340,
+              "importedFrom": "lane-detect.json",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "auto"
+            }
+          },
+          {
+            "laneId": "lane-7",
+            "ordinal": 7,
+            "role": "sample",
+            "sampleName": "Sample 7",
+            "points": [
+              {
+                "x": 288,
+                "y": 24
+              },
+              {
+                "x": 288,
+                "y": 396
+              }
+            ],
+            "halfWidthPx": 13,
+            "provenance": {
+              "materialId": "lane-7",
+              "fieldPath": "points",
+              "byteOffset": 380,
+              "importedFrom": "lane-detect.json",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "auto"
+            }
+          }
+        ],
+        "provenance": {
+          "materialId": "geo-baseline",
+          "fieldPath": "lanes",
+          "byteOffset": 0,
+          "importedFrom": "lane-detect.json",
+          "recordedAt": "2026-09-23T03:40:00+09:00",
+          "method": "auto"
+        }
+      },
+      {
+        "type": "band-annotation",
+        "id": "bands-baseline",
+        "imageId": "img-baseline",
+        "bands": [
+          {
+            "id": "lane-L-b1500",
+            "laneId": "lane-L",
+            "ordinal": 1,
+            "center": {
+              "x": 36,
+              "y": 78
+            },
+            "label": "1500bp",
+            "provenance": {
+              "materialId": "lane-L-b1500",
+              "fieldPath": "center",
+              "byteOffset": 20,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-L-b1000",
+            "laneId": "lane-L",
+            "ordinal": 2,
+            "center": {
+              "x": 36,
+              "y": 116
+            },
+            "label": "1000bp",
+            "provenance": {
+              "materialId": "lane-L-b1000",
+              "fieldPath": "center",
+              "byteOffset": 44,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-L-b750",
+            "laneId": "lane-L",
+            "ordinal": 3,
+            "center": {
+              "x": 36,
+              "y": 146
+            },
+            "label": "750bp",
+            "provenance": {
+              "materialId": "lane-L-b750",
+              "fieldPath": "center",
+              "byteOffset": 68,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-L-b500",
+            "laneId": "lane-L",
+            "ordinal": 4,
+            "center": {
+              "x": 36,
+              "y": 182
+            },
+            "label": "500bp",
+            "provenance": {
+              "materialId": "lane-L-b500",
+              "fieldPath": "center",
+              "byteOffset": 92,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-L-b300",
+            "laneId": "lane-L",
+            "ordinal": 5,
+            "center": {
+              "x": 36,
+              "y": 224
+            },
+            "label": "300bp",
+            "provenance": {
+              "materialId": "lane-L-b300",
+              "fieldPath": "center",
+              "byteOffset": 116,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-L-b200",
+            "laneId": "lane-L",
+            "ordinal": 6,
+            "center": {
+              "x": 36,
+              "y": 264
+            },
+            "label": "200bp",
+            "provenance": {
+              "materialId": "lane-L-b200",
+              "fieldPath": "center",
+              "byteOffset": 140,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-L-b100",
+            "laneId": "lane-L",
+            "ordinal": 7,
+            "center": {
+              "x": 36,
+              "y": 324
+            },
+            "label": "100bp",
+            "provenance": {
+              "materialId": "lane-L-b100",
+              "fieldPath": "center",
+              "byteOffset": 164,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-L-b50",
+            "laneId": "lane-L",
+            "ordinal": 8,
+            "center": {
+              "x": 36,
+              "y": 372
+            },
+            "label": "50bp",
+            "provenance": {
+              "materialId": "lane-L-b50",
+              "fieldPath": "center",
+              "byteOffset": 188,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-1-b96",
+            "laneId": "lane-1",
+            "ordinal": 1,
+            "center": {
+              "x": 72,
+              "y": 120
+            },
+            "kindHint": "normal",
+            "provenance": {
+              "materialId": "lane-1-b96",
+              "fieldPath": "center",
+              "byteOffset": 230,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-1-b160",
+            "laneId": "lane-1",
+            "ordinal": 2,
+            "center": {
+              "x": 72,
+              "y": 184
+            },
+            "kindHint": "normal",
+            "provenance": {
+              "materialId": "lane-1-b160",
+              "fieldPath": "center",
+              "byteOffset": 254,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-1-b246",
+            "laneId": "lane-1",
+            "ordinal": 3,
+            "center": {
+              "x": 72,
+              "y": 270
+            },
+            "kindHint": "normal",
+            "provenance": {
+              "materialId": "lane-1-b246",
+              "fieldPath": "center",
+              "byteOffset": 278,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-2-b124",
+            "laneId": "lane-2",
+            "ordinal": 1,
+            "center": {
+              "x": 108,
+              "y": 148
+            },
+            "kindHint": "normal",
+            "provenance": {
+              "materialId": "lane-2-b124",
+              "fieldPath": "center",
+              "byteOffset": 260,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-2-b202",
+            "laneId": "lane-2",
+            "ordinal": 2,
+            "center": {
+              "x": 108,
+              "y": 226
+            },
+            "kindHint": "normal",
+            "provenance": {
+              "materialId": "lane-2-b202",
+              "fieldPath": "center",
+              "byteOffset": 284,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-3-b150",
+            "laneId": "lane-3",
+            "ordinal": 1,
+            "center": {
+              "x": 144,
+              "y": 174
+            },
+            "kindHint": "overlap",
+            "provenance": {
+              "materialId": "lane-3-b150",
+              "fieldPath": "center",
+              "byteOffset": 290,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-3-b156",
+            "laneId": "lane-3",
+            "ordinal": 2,
+            "center": {
+              "x": 144,
+              "y": 180
+            },
+            "kindHint": "overlap",
+            "provenance": {
+              "materialId": "lane-3-b156",
+              "fieldPath": "center",
+              "byteOffset": 314,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-3-b280",
+            "laneId": "lane-3",
+            "ordinal": 3,
+            "center": {
+              "x": 144,
+              "y": 304
+            },
+            "kindHint": "normal",
+            "provenance": {
+              "materialId": "lane-3-b280",
+              "fieldPath": "center",
+              "byteOffset": 338,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-4-b88",
+            "laneId": "lane-4",
+            "ordinal": 1,
+            "center": {
+              "x": 180,
+              "y": 112
+            },
+            "kindHint": "normal",
+            "provenance": {
+              "materialId": "lane-4-b88",
+              "fieldPath": "center",
+              "byteOffset": 320,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-4-b170",
+            "laneId": "lane-4",
+            "ordinal": 2,
+            "center": {
+              "x": 180,
+              "y": 194
+            },
+            "kindHint": "normal",
+            "provenance": {
+              "materialId": "lane-4-b170",
+              "fieldPath": "center",
+              "byteOffset": 344,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-4-b318",
+            "laneId": "lane-4",
+            "ordinal": 3,
+            "center": {
+              "x": 180,
+              "y": 342
+            },
+            "kindHint": "normal",
+            "provenance": {
+              "materialId": "lane-4-b318",
+              "fieldPath": "center",
+              "byteOffset": 368,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-5-b130",
+            "laneId": "lane-5",
+            "ordinal": 1,
+            "center": {
+              "x": 216,
+              "y": 154
+            },
+            "kindHint": "saturated",
+            "provenance": {
+              "materialId": "lane-5-b130",
+              "fieldPath": "center",
+              "byteOffset": 350,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-5-b244",
+            "laneId": "lane-5",
+            "ordinal": 2,
+            "center": {
+              "x": 216,
+              "y": 268
+            },
+            "kindHint": "normal",
+            "provenance": {
+              "materialId": "lane-5-b244",
+              "fieldPath": "center",
+              "byteOffset": 374,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-6-b104",
+            "laneId": "lane-6",
+            "ordinal": 1,
+            "center": {
+              "x": 252,
+              "y": 128
+            },
+            "kindHint": "normal",
+            "provenance": {
+              "materialId": "lane-6-b104",
+              "fieldPath": "center",
+              "byteOffset": 380,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-6-b214",
+            "laneId": "lane-6",
+            "ordinal": 2,
+            "center": {
+              "x": 252,
+              "y": 238
+            },
+            "kindHint": "normal",
+            "provenance": {
+              "materialId": "lane-6-b214",
+              "fieldPath": "center",
+              "byteOffset": 404,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-6-b330",
+            "laneId": "lane-6",
+            "ordinal": 3,
+            "center": {
+              "x": 252,
+              "y": 354
+            },
+            "kindHint": "tailed",
+            "provenance": {
+              "materialId": "lane-6-b330",
+              "fieldPath": "center",
+              "byteOffset": 428,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-7-b116",
+            "laneId": "lane-7",
+            "ordinal": 1,
+            "center": {
+              "x": 288,
+              "y": 140
+            },
+            "kindHint": "normal",
+            "provenance": {
+              "materialId": "lane-7-b116",
+              "fieldPath": "center",
+              "byteOffset": 410,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          },
+          {
+            "id": "lane-7-b262",
+            "laneId": "lane-7",
+            "ordinal": 2,
+            "center": {
+              "x": 288,
+              "y": 286
+            },
+            "kindHint": "normal",
+            "provenance": {
+              "materialId": "lane-7-b262",
+              "fieldPath": "center",
+              "byteOffset": 434,
+              "importedFrom": "bands.csv",
+              "recordedAt": "2026-09-23T03:40:00+09:00",
+              "method": "manual"
+            }
+          }
+        ],
+        "provenance": {
+          "materialId": "bands-baseline",
+          "fieldPath": "bands",
+          "byteOffset": 0,
+          "importedFrom": "bands.csv",
+          "recordedAt": "2026-09-23T03:40:00+09:00",
+          "method": "manual"
+        }
+      }
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "rotated-image",
+      "title": "旋转图像（只改图像方向这一个直接来源）",
+      "changesOneSource": "source-image: 将原图旋转 90°；材料像素值不变，拍摄方向确认事件变为 rotationApplied=90",
+      "expects": {
+        "statuses": {},
+        "diagnosticCodes": [],
+        "narrative": "旋转后重投影的条带弧长与基线一致；身份不变，仅 rotated-image 节点摘要改变。"
+      },
+      "render": {
+        "rotate": 90
+      }
+    },
+    {
+      "id": "curved-lanes",
+      "title": "弯曲泳道（微笑）：同一高度 ≠ 同一分子量",
+      "changesOneSource": "lanes:curves —— 仅把中心线由直线改为微笑曲线，图像像素随之按曲线重绘，ladder 标称不变",
+      "expects": {
+        "diagnosticCodes": [],
+        "statuses": {},
+        "narrative": "直线道按 y 对齐会把弯曲道的条带配错；沿曲线取弧长后局部标尺恢复，并带有效区域。"
+      },
+      "render": {
+        "smile": true
+      },
+      "patch": {
+        "kind": "curves",
+        "detail": {
+          "amplitudePx": 10
+        }
+      }
+    },
+    {
+      "id": "ladder-missing-band",
+      "title": "ladder 缺带",
+      "changesOneSource": "image:pixels —— 仅抹除 500bp 这一条 ladder 带（图像与该 band 来源），标称条目保留",
+      "expects": {
+        "diagnosticCodes": [
+          "LADDER_MISSING_BAND"
+        ],
+        "statuses": {},
+        "narrative": "500bp 槽位缺失，300..750 之间合并为跨段插值，标称 500bp 仍留在列表并标 missing。"
+      },
+      "render": {
+        "missingLadderAt": [
+          500
+        ]
+      }
+    },
+    {
+      "id": "saturated-band",
+      "title": "饱和区",
+      "changesOneSource": "image:pixels —— 仅把 lane-5 的一条带中心打成 255 饱和",
+      "expects": {
+        "diagnosticCodes": [
+          "SATURATED_CANDIDATE"
+        ],
+        "statuses": {
+          "lane-5": [
+            "candidate"
+          ]
+        },
+        "narrative": "饱和条带中心不唯一，只能标候选并给分子量区间，不给单一 bp。"
+      }
+    },
+    {
+      "id": "overlap-two-bands",
+      "title": "两条带重叠",
+      "changesOneSource": "image:pixels —— 仅令 lane-3 两条带间距 6px（基线已布置），来源只改像素",
+      "expects": {
+        "diagnosticCodes": [
+          "OVERLAP_CANDIDATES"
+        ],
+        "statuses": {
+          "lane-3": [
+            "candidate"
+          ]
+        },
+        "narrative": "重叠无法唯一决定，保留 overlap-a / overlap-b 全部合法候选与区间。"
+      }
+    },
+    {
+      "id": "nonmonotonic-scale",
+      "title": "非单调标尺",
+      "changesOneSource": "ladder:nominal —— 仅交换 750/500 两条标称顺序，像素与条带不动",
+      "expects": {
+        "diagnosticCodes": [
+          "SEMANTIC_NO_SOLUTION"
+        ],
+        "statuses": {},
+        "narrative": "s 增大时 bp 不再单调下降：语义无解，不生成插值段；区别于格式损坏和预算耗尽。"
+      },
+      "patch": {
+        "kind": "nonmonotonic-ladder",
+        "detail": {
+          "swapOrdinals": [
+            3,
+            4
+          ]
+        }
+      }
+    },
+    {
+      "id": "local-invalidation",
+      "title": "参数修订后局部失效",
+      "changesOneSource": "params —— 唯一变更是参数版本 params-001→params-002（饱和阈值 254→200）",
+      "expects": {
+        "diagnosticCodes": [
+          "LOCAL_DEPENDENCY_INVALID",
+          "SATURATED_CANDIDATE"
+        ],
+        "statuses": {},
+        "narrative": "只有 lane-5 中本未饱和的条带在新阈值下变候选；其他道节点 id 与结论保持不变。"
+      },
+      "patch": {
+        "kind": "param-revision",
+        "detail": {
+          "toVersion": "params-002-saturation-200"
+        }
+      }
+    }
+  ]
+}

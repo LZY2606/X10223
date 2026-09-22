@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>胶道标尺 · 电泳条带/泳道弯曲/分子量校准工作台</title>
+<link rel="stylesheet" href="/src/ui/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <strong>胶道标尺工作台</strong>
+      <span id="project-name" class="muted"></span>
+    </div>
+    <div class="toolbar">
+      <button id="btn-export">导出项目</button>
+      <label class="btnlike">导入项目<input id="file-import" type="file" accept="application/json" hidden /></label>
+      <button id="btn-halfwrite">模拟半写</button>
+      <button id="btn-recover">半写恢复</button>
+      <button id="btn-reset" class="danger">重置样例库</button>
+    </div>
+  </header>
+  <main class="layout">
+    <aside class="col col-left">
+      <section>
+        <h3>分支 / 反例叙事</h3>
+        <div id="branch-list" class="branch-list"></div>
+        <button id="btn-fork" class="small">从当前事件分叉新分支</button>
+      </section>
+      <section>
+        <h3>决定历史（仅追加）</h3>
+        <div id="timeline" class="timeline"></div>
+      </section>
+    </aside>
+    <section class="col col-center">
+      <div class="canvas-wrap">
+        <canvas id="gel"></canvas>
+        <div id="hover-hint" class="hover-hint muted"></div>
+      </div>
+      <div class="overlay-toggles">
+        <label><input type="checkbox" id="tg-image" checked /> 原图</label>
+        <label><input type="checkbox" id="tg-lanes" checked /> lane 曲线</label>
+        <label><input type="checkbox" id="tg-bands" checked /> 条带中心</label>
+        <label><input type="checkbox" id="tg-profile" /> 条带轮廓</label>
+        <label><input type="checkbox" id="tg-residual" checked /> ladder 残差</label>
+        <label><input type="checkbox" id="tg-valid" checked /> 有效区域</label>
+      </div>
+    </section>
+    <aside class="col col-right">
+      <section>
+        <h3>证据往返</h3>
+        <div id="inspector" class="inspector muted">点击任一分子量或 ladder 点查看来源、插值段与拟合残差。</div>
+      </section>
+      <section>
+        <h3>单位 / 坐标 / 有效区间 / 失效</h3>
+        <div id="basis" class="basis"></div>
+      </section>
+      <section>
+        <h3>条带分子量（自动候选 vs 人工）</h3>
+        <div id="band-table"></div>
+      </section>
+    </aside>
+  </main>
+  <script type="module" src="/src/ui/main.ts"></script>
+</body>
+</html>
