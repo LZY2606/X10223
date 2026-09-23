@@ -1,0 +1,19 @@
+{
+  "name": "gel-lane-ruler",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "胶道标尺：电泳条带、泳道弯曲与分子量校准工作台",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5342 --strictPort",
+    "build": "tsc -p tsconfig.json --noEmit && vite build",
+    "test": "vitest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.7.2",
+    "vite": "^7.0.0",
+    "vitest": "^3.1.0"
+  }
+}
