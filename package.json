@@ -1,0 +1,20 @@
+{
+  "name": "gel-lane-ruler-workbench",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "胶道标尺：电泳条带、泳道弯曲与分子量校准工作台（离线案例包）",
+  "scripts": {
+    "test": "node scripts/run-tests.mjs",
+    "dev": "node --disable-warning=ExperimentalWarning src/server/main.ts",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "vite": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.8.0"
+  }
+}
