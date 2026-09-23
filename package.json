@@ -1,0 +1,34 @@
+{
+  "name": "gel-ruler-workbench",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "vitest",
+    "dev": "vite",
+    "build": "vite build",
+    "casepack": "node scripts/build-casepack.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LZY2606/X10223.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/LZY2606/X10223/issues"
+  },
+  "homepage": "https://github.com/LZY2606/X10223#readme",
+  "private": "true",
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.0",
+    "vitest": "^5.0.1"
+  }
+}
