@@ -1,0 +1,12 @@
+import { openDB } from '../src/server/db.js';
+import { Store } from '../src/server/store.js';
+import { seedStore } from '../src/server/seed.js';
+const db = openDB(':memory:');
+const store = new Store(db);
+seedStore(store);
+const p = store.listProjects().find(x=>x.case_kind==='baseline')!;
+const st = store.stateAt(p.project_id,'main');
+console.log('materials:', st.materials.map(m=>`${m.kind}:${('laneId' in m)?m.laneId:''}`).join(' '));
+console.log('diagnostics:', JSON.stringify(st.diagnostics,null,1));
+console.log('calibration:', JSON.stringify(st.calibration,null,1).slice(0,1200));
+console.log('inferences:', st.inferences.length);

@@ -1,0 +1,27 @@
+{
+  "name": "gel-lane-calibrator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "胶道标尺：电泳条带、泳道弯曲与分子量校准工作台（离线案例包 + 事件溯源 + SQLite）",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json --noEmit && vite build",
+    "test": "vitest",
+    "cases": "tsx scripts/generate-cases.ts",
+    "server": "tsx scripts/server.ts"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.2.0",
+    "pngjs": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/node": "^24.0.0",
+    "@types/pngjs": "^6.0.5",
+    "tsx": "^4.19.2",
+    "typescript": "~5.7.2",
+    "vite": "^7.0.0",
+    "vitest": "^3.0.0"
+  }
+}
