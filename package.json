@@ -1,0 +1,23 @@
+{
+  "name": "gel-ruler-workbench",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "胶道标尺：电泳条带、泳道弯曲与分子量校准工作台",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "test": "vitest",
+    "seed": "node --experimental-strip-types src/server/cli-seed.ts"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.6.0",
+    "vite": "^5.4.8",
+    "vitest": "^2.1.3"
+  }
+}
