@@ -1,0 +1,20 @@
+{
+  "name": "gel-ladder-calibration-workbench",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "胶道标尺：电泳条带、泳道弯曲与分子量校准工作台（本地、离线、可重放）",
+  "scripts": {
+    "dev": "vite",
+    "test": "vitest",
+    "build": "tsc --noEmit && vite build",
+    "casepack": "node --import tsx scripts/make-casepack.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.4",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vite": "^5.4.21",
+    "vitest": "^2.1.9"
+  }
+}
