@@ -1,0 +1,10 @@
+import { renderGel, baselineSpec } from './src/core/synth.ts';
+import { extractLaneProfile } from './src/core/signal.ts';
+const spec = baselineSpec();
+const gel = renderGel(spec);
+const sl = spec.lanes[4];
+const cl=[{x:sl.x,y:0,frame:'image' as const},{x:sl.x,y:gel.height-1,frame:'image' as const}];
+const prof = extractLaneProfile(gel.pixels, gel.width, gel.height, cl, Math.round(sl.halfWidth*0.35));
+const half=30;
+const bg = prof.intensity.map((_,i)=>{let mn=Infinity;for(let k=Math.max(0,i-half);k<=Math.min(prof.intensity.length-1,i+half);k++)mn=Math.min(mn,prof.intensity[k]);return mn;});
+for(let i=312;i<352;i++)console.log(i, (prof.intensity[i]-bg[i]).toFixed(1), prof.intensity[i].toFixed(1));

@@ -1,0 +1,12 @@
+import { renderGel, baselineSpec } from './src/core/synth.ts';
+import { extractLaneProfile, findPeaks } from './src/core/signal.ts';
+const spec = baselineSpec();
+const gel = renderGel(spec);
+const sl = spec.lanes[4];
+const cl=[{x:sl.x,y:0,frame:'image' as const},{x:sl.x,y:gel.height-1,frame:'image' as const}];
+const prof = extractLaneProfile(gel.pixels, gel.width, gel.height, cl, Math.round(sl.halfWidth*0.35));
+const half=30;
+const bg = prof.intensity.map((_,i)=>{let mn=Infinity;for(let k=Math.max(0,i-half);k<=Math.min(prof.intensity.length-1,i+half);k++)mn=Math.min(mn,prof.intensity[k]);return mn;});
+const c = prof.intensity.map((v,i)=>Math.max(0,v-bg[i]));
+for(let i=328;i<336;i++)console.log(i, c[i].toFixed(1), c[i]<=c[i-1], c[i]<=c[i+1]);
+console.log(findPeaks(prof,{minHeight:28,resolutionWidth:16}).map(p=>p.s.toFixed(1)));

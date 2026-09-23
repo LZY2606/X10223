@@ -1,0 +1,23 @@
+{
+  "name": "gel-lane-calibration-workbench",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "胶道标尺：电泳条带、泳道弯曲与分子量校准工作台",
+  "engines": { "node": ">=22.5" },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "casepack": "node --experimental-strip-types src/casepack/generate.ts",
+    "server": "node --experimental-strip-types src/server/main.ts"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vitest": "^3.1.4"
+  }
+}
