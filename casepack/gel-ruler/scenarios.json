@@ -1,0 +1,48 @@
+{
+  "archive": "gel-ruler counterexample archive",
+  "baseline": "原图/拍摄方向/曝光/ladder 标称值/lane 边界/条带中心均保留像素级来源",
+  "mutations": [
+    {
+      "id": "rotated-image",
+      "title": "旋转图像",
+      "change": "capture.orientationDeg",
+      "note": "raw 存储旋转 90°,派生层规范化,原始像素来源保留"
+    },
+    {
+      "id": "curved-lanes",
+      "title": "弯曲泳道(微笑)",
+      "change": "lane-boundary",
+      "note": "同一高度不等于同一分子量,局部标尺必须带有效区域"
+    },
+    {
+      "id": "ladder-missing-band",
+      "title": "ladder 缺带",
+      "change": "ladder-nominal",
+      "note": "标称 8 条可见 7 条,产生带位置诊断"
+    },
+    {
+      "id": "saturated-region",
+      "title": "饱和区",
+      "change": "band-center s2-sat",
+      "note": "只能标为候选"
+    },
+    {
+      "id": "overlapping-bands",
+      "title": "两条带重叠",
+      "change": "band-center s3-ov1/s3-ov2",
+      "note": "只能标为区间,保留全部合法候选"
+    },
+    {
+      "id": "non-monotonic-ruler",
+      "title": "非单调标尺",
+      "change": "ladder-nominal swap",
+      "note": "semantic_unsolvable,区别于格式损坏与预算耗尽"
+    },
+    {
+      "id": "local-invalidation",
+      "title": "修订后局部失效",
+      "change": "lane-boundary lane-3",
+      "note": "仅 lane-3 的派生结果失效,其余保持身份"
+    }
+  ]
+}

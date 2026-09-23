@@ -1,0 +1,431 @@
+{
+  "name": "gel-ruler-casepack",
+  "image": {
+    "file": "gel.png",
+    "width": 480,
+    "height": 360
+  },
+  "capture": {
+    "orientationDeg": 90,
+    "exposureRaw": "2.5 kV*h"
+  },
+  "ladder": {
+    "laneIndex": 0,
+    "sizesRaw": [
+      "10000 bp",
+      "8000 bp",
+      "6000 bp",
+      "5000 bp",
+      "4000 bp",
+      "3000 bp",
+      "2000 bp",
+      "1000 bp"
+    ]
+  },
+  "lanes": [
+    {
+      "id": "lane-0",
+      "boundaryRaw": [
+        {
+          "x": 459,
+          "y": 51
+        },
+        {
+          "x": 419,
+          "y": 53
+        },
+        {
+          "x": 379,
+          "y": 55
+        },
+        {
+          "x": 339,
+          "y": 57
+        },
+        {
+          "x": 299,
+          "y": 60
+        },
+        {
+          "x": 259,
+          "y": 62
+        },
+        {
+          "x": 219,
+          "y": 64
+        },
+        {
+          "x": 179,
+          "y": 66
+        },
+        {
+          "x": 139,
+          "y": 68
+        },
+        {
+          "x": 99,
+          "y": 70
+        },
+        {
+          "x": 59,
+          "y": 72
+        },
+        {
+          "x": 19,
+          "y": 75
+        }
+      ]
+    },
+    {
+      "id": "lane-1",
+      "boundaryRaw": [
+        {
+          "x": 459,
+          "y": 120
+        },
+        {
+          "x": 419,
+          "y": 121
+        },
+        {
+          "x": 379,
+          "y": 121
+        },
+        {
+          "x": 339,
+          "y": 122
+        },
+        {
+          "x": 299,
+          "y": 122
+        },
+        {
+          "x": 259,
+          "y": 123
+        },
+        {
+          "x": 219,
+          "y": 123
+        },
+        {
+          "x": 179,
+          "y": 124
+        },
+        {
+          "x": 139,
+          "y": 125
+        },
+        {
+          "x": 99,
+          "y": 125
+        },
+        {
+          "x": 59,
+          "y": 126
+        },
+        {
+          "x": 19,
+          "y": 126
+        }
+      ]
+    },
+    {
+      "id": "lane-2",
+      "boundaryRaw": [
+        {
+          "x": 459,
+          "y": 190
+        },
+        {
+          "x": 419,
+          "y": 190
+        },
+        {
+          "x": 379,
+          "y": 190
+        },
+        {
+          "x": 339,
+          "y": 190
+        },
+        {
+          "x": 299,
+          "y": 190
+        },
+        {
+          "x": 259,
+          "y": 190
+        },
+        {
+          "x": 219,
+          "y": 190
+        },
+        {
+          "x": 179,
+          "y": 190
+        },
+        {
+          "x": 139,
+          "y": 190
+        },
+        {
+          "x": 99,
+          "y": 190
+        },
+        {
+          "x": 59,
+          "y": 190
+        },
+        {
+          "x": 19,
+          "y": 190
+        }
+      ]
+    },
+    {
+      "id": "lane-3",
+      "boundaryRaw": [
+        {
+          "x": 459,
+          "y": 260
+        },
+        {
+          "x": 419,
+          "y": 261
+        },
+        {
+          "x": 379,
+          "y": 261
+        },
+        {
+          "x": 339,
+          "y": 262
+        },
+        {
+          "x": 299,
+          "y": 262
+        },
+        {
+          "x": 259,
+          "y": 263
+        },
+        {
+          "x": 219,
+          "y": 263
+        },
+        {
+          "x": 179,
+          "y": 264
+        },
+        {
+          "x": 139,
+          "y": 265
+        },
+        {
+          "x": 99,
+          "y": 265
+        },
+        {
+          "x": 59,
+          "y": 266
+        },
+        {
+          "x": 19,
+          "y": 266
+        }
+      ]
+    },
+    {
+      "id": "lane-4",
+      "boundaryRaw": [
+        {
+          "x": 459,
+          "y": 331
+        },
+        {
+          "x": 419,
+          "y": 333
+        },
+        {
+          "x": 379,
+          "y": 335
+        },
+        {
+          "x": 339,
+          "y": 337
+        },
+        {
+          "x": 299,
+          "y": 340
+        },
+        {
+          "x": 259,
+          "y": 342
+        },
+        {
+          "x": 219,
+          "y": 344
+        },
+        {
+          "x": 179,
+          "y": 346
+        },
+        {
+          "x": 139,
+          "y": 348
+        },
+        {
+          "x": 99,
+          "y": 350
+        },
+        {
+          "x": 59,
+          "y": 352
+        },
+        {
+          "x": 19,
+          "y": 355
+        }
+      ]
+    }
+  ],
+  "bands": [
+    {
+      "id": "lad-0",
+      "laneId": "lane-0",
+      "x": 417,
+      "y": 50,
+      "maxIntensity": 210,
+      "trailingScore": 0.1
+    },
+    {
+      "id": "lad-1",
+      "laneId": "lane-0",
+      "x": 401,
+      "y": 50,
+      "maxIntensity": 210,
+      "trailingScore": 0.1
+    },
+    {
+      "id": "lad-2",
+      "laneId": "lane-0",
+      "x": 382,
+      "y": 50,
+      "maxIntensity": 210,
+      "trailingScore": 0.1
+    },
+    {
+      "id": "lad-3",
+      "laneId": "lane-0",
+      "x": 369,
+      "y": 50,
+      "maxIntensity": 210,
+      "trailingScore": 0.1
+    },
+    {
+      "id": "lad-4",
+      "laneId": "lane-0",
+      "x": 353,
+      "y": 50,
+      "maxIntensity": 210,
+      "trailingScore": 0.1
+    },
+    {
+      "id": "lad-5",
+      "laneId": "lane-0",
+      "x": 333,
+      "y": 50,
+      "maxIntensity": 210,
+      "trailingScore": 0.1
+    },
+    {
+      "id": "lad-6",
+      "laneId": "lane-0",
+      "x": 305,
+      "y": 50,
+      "maxIntensity": 210,
+      "trailingScore": 0.1
+    },
+    {
+      "id": "lad-7",
+      "laneId": "lane-0",
+      "x": 257,
+      "y": 50,
+      "maxIntensity": 210,
+      "trailingScore": 0.1
+    },
+    {
+      "id": "s1-a",
+      "laneId": "lane-1",
+      "x": 394,
+      "y": 120,
+      "maxIntensity": 200,
+      "trailingScore": 0.1
+    },
+    {
+      "id": "s1-b",
+      "laneId": "lane-1",
+      "x": 345,
+      "y": 120,
+      "maxIntensity": 195,
+      "trailingScore": 0.2
+    },
+    {
+      "id": "s2-sat",
+      "laneId": "lane-2",
+      "x": 369,
+      "y": 190,
+      "maxIntensity": 255,
+      "trailingScore": 0.1
+    },
+    {
+      "id": "s2-far",
+      "laneId": "lane-2",
+      "x": 257,
+      "y": 190,
+      "maxIntensity": 180,
+      "trailingScore": 0.1
+    },
+    {
+      "id": "s3-ov1",
+      "laneId": "lane-3",
+      "x": 350,
+      "y": 260,
+      "maxIntensity": 190,
+      "trailingScore": 0.1
+    },
+    {
+      "id": "s3-ov2",
+      "laneId": "lane-3",
+      "x": 347,
+      "y": 260,
+      "maxIntensity": 190,
+      "trailingScore": 0.1
+    },
+    {
+      "id": "s3-trail",
+      "laneId": "lane-3",
+      "x": 317,
+      "y": 260,
+      "maxIntensity": 185,
+      "trailingScore": 0.7
+    },
+    {
+      "id": "s4-a",
+      "laneId": "lane-4",
+      "x": 401,
+      "y": 330,
+      "maxIntensity": 200,
+      "trailingScore": 0.1
+    },
+    {
+      "id": "s4-b",
+      "laneId": "lane-4",
+      "x": 305,
+      "y": 330,
+      "maxIntensity": 200,
+      "trailingScore": 0.1
+    }
+  ],
+  "saturationThreshold": 250
+}

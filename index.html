@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>胶道标尺 · 电泳条带、泳道弯曲与分子量校准工作台</title>
+  <style>
+    :root { --bg:#14171c; --panel:#1c2129; --line:#2c333f; --fg:#d7dde6; --dim:#8a94a3;
+            --acc:#5ec1ff; --ok:#5fd68a; --warn:#ffb454; --bad:#ff6b6b; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--fg); font:13px/1.55 ui-monospace, Menlo, monospace; }
+    header { padding:8px 12px; border-bottom:1px solid var(--line); display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+    header h1 { font-size:14px; margin:0 12px 0 0; color:var(--acc); }
+    button { background:#232a35; color:var(--fg); border:1px solid var(--line); border-radius:4px; padding:4px 10px; cursor:pointer; font:inherit; }
+    button:hover { border-color:var(--acc); }
+    button.scenario { color:var(--warn); }
+    #layout { display:grid; grid-template-columns: minmax(430px,1fr) 400px; gap:10px; padding:10px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:10px; margin-bottom:10px; }
+    .panel h2 { font-size:12px; color:var(--dim); margin:0 0 8px; letter-spacing:.06em; }
+    .kv { display:grid; grid-template-columns:130px 1fr; gap:2px 8px; }
+    .kv b { color:var(--dim); font-weight:normal; }
+    .tag { display:inline-block; padding:0 6px; border:1px solid var(--line); border-radius:3px; margin:0 4px 2px 0; }
+    .tag.ok { color:var(--ok); } .tag.warn { color:var(--warn); } .tag.bad { color:var(--bad); }
+    #events { max-height:170px; overflow:auto; }
+    #events div { padding:2px 4px; border-bottom:1px solid #222a35; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    #events div:hover { background:#232a35; }
+    #replay-banner { display:none; background:#3a2c14; color:var(--warn); padding:4px 12px; }
+    #diag { color:var(--bad); white-space:pre-wrap; }
+    .muted { color:var(--dim); }
+    a, .link { color:var(--acc); cursor:pointer; }
+    svg { display:block; }
+    #gel { width:100%; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>胶道标尺 · 分子量校准工作台</h1>
+    <button id="btn-import">导入案例包</button>
+    <button id="btn-compute">计算</button>
+    <button id="btn-save">保存</button>
+    <button id="btn-export">导出</button>
+    <button id="btn-reopen">再次打开</button>
+    <input id="file-reopen" type="file" accept=".json" style="display:none" />
+    <span class="muted" id="digest"></span>
+  </header>
+  <header>
+    <span class="muted">反例档案:</span>
+    <button class="scenario" data-sc="rotated">旋转图像</button>
+    <button class="scenario" data-sc="smile">弯曲泳道</button>
+    <button class="scenario" data-sc="ladder-gap">ladder 缺带</button>
+    <button class="scenario" data-sc="saturated">饱和区</button>
+    <button class="scenario" data-sc="overlap">两条带重叠</button>
+    <button class="scenario" data-sc="nonmono">非单调标尺</button>
+    <button class="scenario" data-sc="local-invalidation">修订后局部失效</button>
+    <button class="scenario" data-sc="reset">恢复基线</button>
+  </header>
+  <div id="replay-banner"></div>
+  <div id="layout">
+    <div>
+      <div class="panel">
+        <h2>复核视图 · 原图 + lane 曲线 + 条带轮廓 + 拟合残差
+          <label><input type="checkbox" id="ov-image" checked />原图</label>
+          <label><input type="checkbox" id="ov-lanes" checked />lane 曲线</label>
+          <label><input type="checkbox" id="ov-bands" checked />条带轮廓</label>
+        </h2>
+        <svg id="gel"></svg>
+      </div>
+      <div class="panel">
+        <h2>事件时间线(点击回到历史事件)</h2>
+        <div id="events"></div>
+      </div>
+    </div>
+    <div>
+      <div class="panel" id="detail"><h2>条带详情</h2><div class="muted">点击图中的条带轮廓</div></div>
+      <div class="panel">
+        <h2>ladder 点与插值段 · 拟合残差</h2>
+        <svg id="ruler" width="100%" height="190"></svg>
+        <div id="resid" class="muted"></div>
+      </div>
+      <div class="panel"><h2>诊断</h2><div id="diag" class="muted">无</div></div>
+    </div>
+  </div>
+  <script type="module" src="/src/web/main.ts"></script>
+</body>
+</html>
