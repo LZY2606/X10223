@@ -1,0 +1,24 @@
+{
+  "name": "gel-ladder-workbench",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "胶道标尺：电泳条带、泳道弯曲与分子量校准工作台",
+  "scripts": {
+    "dev": "tsx src/server/main.ts",
+    "build": "tsc --noEmit && vite build",
+    "test": "vitest",
+    "start": "tsx src/server/main.ts"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.0",
+    "tsx": "^4.19.2",
+    "vite": "^6.0.7"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/node": "^22.10.5",
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.9"
+  }
+}
