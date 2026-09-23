@@ -1,0 +1,21 @@
+{
+  "name": "gel-calibration-workbench",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx server/main.ts",
+    "dev:vite": "vite --host 127.0.0.1 --port 5342 --strictPort",
+    "build": "tsc --noEmit && vite build",
+    "test": "vitest",
+    "generate:case": "tsx scripts/generate-case-pack.ts",
+    "start": "tsx server/main.ts"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7",
+    "vitest": "^3.0.4"
+  }
+}
