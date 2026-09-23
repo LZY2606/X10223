@@ -1,0 +1,1123 @@
+{
+  "caseId": "gel-smile-01",
+  "units": {
+    "size": "bp",
+    "coordinate": "px",
+    "exposure": "ms"
+  },
+  "basis": {
+    "pixel": "image-pixel（原点左上，+y 为迁移方向）",
+    "migration": "lane-arc-px（沿泳道中心线自加样孔的弧长）"
+  },
+  "materials": [
+    {
+      "id": "img-baseline",
+      "kind": "image",
+      "revision": 1,
+      "sha256": "TO_BE_COMPUTED_AT_IMPORT",
+      "widthPx": 480,
+      "heightPx": 640,
+      "orientationDeg": 0,
+      "exposure": {
+        "value": 120,
+        "unit": "ms",
+        "raw": "120ms"
+      },
+      "file": "images/gel-baseline.png"
+    },
+    {
+      "id": "ladder-1kb",
+      "kind": "ladderSpec",
+      "revision": 1,
+      "name": "1kb DNA Ladder",
+      "unit": "bp",
+      "bands": [
+        {
+          "id": "lb-10000",
+          "sizeBp": 10000,
+          "raw": "10000"
+        },
+        {
+          "id": "lb-8000",
+          "sizeBp": 8000,
+          "raw": "8000"
+        },
+        {
+          "id": "lb-6000",
+          "sizeBp": 6000,
+          "raw": "6000"
+        },
+        {
+          "id": "lb-5000",
+          "sizeBp": 5000,
+          "raw": "5000"
+        },
+        {
+          "id": "lb-4000",
+          "sizeBp": 4000,
+          "raw": "4000"
+        },
+        {
+          "id": "lb-3000",
+          "sizeBp": 3000,
+          "raw": "3000"
+        },
+        {
+          "id": "lb-2000",
+          "sizeBp": 2000,
+          "raw": "2000"
+        },
+        {
+          "id": "lb-1500",
+          "sizeBp": 1500,
+          "raw": "1500"
+        },
+        {
+          "id": "lb-1000",
+          "sizeBp": 1000,
+          "raw": "1000"
+        },
+        {
+          "id": "lb-500",
+          "sizeBp": 500,
+          "raw": "500"
+        },
+        {
+          "id": "lb-unk",
+          "sizeBp": null,
+          "raw": "约750（待确认）"
+        }
+      ]
+    },
+    {
+      "id": "lane-0",
+      "kind": "lane",
+      "revision": 1,
+      "supersedes": null,
+      "imageId": "img-baseline",
+      "laneIndex": 0,
+      "role": "ladder",
+      "label": "L (1kb ladder)",
+      "centerline": [
+        {
+          "x": 60,
+          "y": 20,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 60.2,
+          "y": 45,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 60.3,
+          "y": 70,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 60.5,
+          "y": 95,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 60.7,
+          "y": 120,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 60.8,
+          "y": 145,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 61,
+          "y": 170,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 61.2,
+          "y": 195,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 61.4,
+          "y": 220,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 61.5,
+          "y": 245,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 61.7,
+          "y": 270,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 61.9,
+          "y": 295,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 62,
+          "y": 320,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 62.2,
+          "y": 345,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 62.4,
+          "y": 370,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 62.5,
+          "y": 395,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 62.7,
+          "y": 420,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 62.9,
+          "y": 445,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 63,
+          "y": 470,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 63.2,
+          "y": 495,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 63.4,
+          "y": 520,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 63.5,
+          "y": 545,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 63.7,
+          "y": 570,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 63.9,
+          "y": 595,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 64,
+          "y": 620,
+          "basis": "image-pixel"
+        }
+      ],
+      "source": "auto"
+    },
+    {
+      "id": "lane-1",
+      "kind": "lane",
+      "revision": 1,
+      "supersedes": null,
+      "imageId": "img-baseline",
+      "laneIndex": 1,
+      "role": "sample",
+      "label": "S1",
+      "centerline": [
+        {
+          "x": 150,
+          "y": 20,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 150,
+          "y": 45,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 150.1,
+          "y": 70,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 150.1,
+          "y": 95,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 150.2,
+          "y": 120,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 150.2,
+          "y": 145,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 150.3,
+          "y": 170,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 150.3,
+          "y": 195,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 150.3,
+          "y": 220,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 150.4,
+          "y": 245,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 150.4,
+          "y": 270,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 150.5,
+          "y": 295,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 150.5,
+          "y": 320,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 150.5,
+          "y": 345,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 150.6,
+          "y": 370,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 150.6,
+          "y": 395,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 150.7,
+          "y": 420,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 150.7,
+          "y": 445,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 150.8,
+          "y": 470,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 150.8,
+          "y": 495,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 150.8,
+          "y": 520,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 150.9,
+          "y": 545,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 150.9,
+          "y": 570,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 151,
+          "y": 595,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 151,
+          "y": 620,
+          "basis": "image-pixel"
+        }
+      ],
+      "source": "auto"
+    },
+    {
+      "id": "lane-2",
+      "kind": "lane",
+      "revision": 1,
+      "supersedes": null,
+      "imageId": "img-baseline",
+      "laneIndex": 2,
+      "role": "sample",
+      "label": "S2",
+      "centerline": [
+        {
+          "x": 240,
+          "y": 20,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 240,
+          "y": 45,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 240,
+          "y": 70,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 240,
+          "y": 95,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 240,
+          "y": 120,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 240,
+          "y": 145,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 240,
+          "y": 170,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 240,
+          "y": 195,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 240,
+          "y": 220,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 240,
+          "y": 245,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 240,
+          "y": 270,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 240,
+          "y": 295,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 240,
+          "y": 320,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 240,
+          "y": 345,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 240,
+          "y": 370,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 240,
+          "y": 395,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 240,
+          "y": 420,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 240,
+          "y": 445,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 240,
+          "y": 470,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 240,
+          "y": 495,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 240,
+          "y": 520,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 240,
+          "y": 545,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 240,
+          "y": 570,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 240,
+          "y": 595,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 240,
+          "y": 620,
+          "basis": "image-pixel"
+        }
+      ],
+      "source": "auto"
+    },
+    {
+      "id": "lane-3",
+      "kind": "lane",
+      "revision": 1,
+      "supersedes": null,
+      "imageId": "img-baseline",
+      "laneIndex": 3,
+      "role": "sample",
+      "label": "S3",
+      "centerline": [
+        {
+          "x": 330,
+          "y": 20,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 330,
+          "y": 45,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 330.1,
+          "y": 70,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 330.1,
+          "y": 95,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 330.2,
+          "y": 120,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 330.2,
+          "y": 145,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 330.3,
+          "y": 170,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 330.3,
+          "y": 195,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 330.3,
+          "y": 220,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 330.4,
+          "y": 245,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 330.4,
+          "y": 270,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 330.5,
+          "y": 295,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 330.5,
+          "y": 320,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 330.5,
+          "y": 345,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 330.6,
+          "y": 370,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 330.6,
+          "y": 395,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 330.7,
+          "y": 420,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 330.7,
+          "y": 445,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 330.8,
+          "y": 470,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 330.8,
+          "y": 495,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 330.8,
+          "y": 520,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 330.9,
+          "y": 545,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 330.9,
+          "y": 570,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 331,
+          "y": 595,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 331,
+          "y": 620,
+          "basis": "image-pixel"
+        }
+      ],
+      "source": "auto"
+    },
+    {
+      "id": "lane-4",
+      "kind": "lane",
+      "revision": 1,
+      "supersedes": null,
+      "imageId": "img-baseline",
+      "laneIndex": 4,
+      "role": "sample",
+      "label": "S4",
+      "centerline": [
+        {
+          "x": 420,
+          "y": 20,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 420.2,
+          "y": 45,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 420.3,
+          "y": 70,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 420.5,
+          "y": 95,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 420.7,
+          "y": 120,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 420.8,
+          "y": 145,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 421,
+          "y": 170,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 421.2,
+          "y": 195,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 421.4,
+          "y": 220,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 421.5,
+          "y": 245,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 421.7,
+          "y": 270,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 421.9,
+          "y": 295,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 422,
+          "y": 320,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 422.2,
+          "y": 345,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 422.4,
+          "y": 370,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 422.5,
+          "y": 395,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 422.7,
+          "y": 420,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 422.9,
+          "y": 445,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 423,
+          "y": 470,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 423.2,
+          "y": 495,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 423.4,
+          "y": 520,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 423.5,
+          "y": 545,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 423.7,
+          "y": 570,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 423.9,
+          "y": 595,
+          "basis": "image-pixel"
+        },
+        {
+          "x": 424.1,
+          "y": 620,
+          "basis": "image-pixel"
+        }
+      ],
+      "source": "auto"
+    },
+    {
+      "id": "mk-10000",
+      "kind": "ladderMark",
+      "revision": 1,
+      "supersedes": null,
+      "laneId": "lane-0",
+      "ladderBandId": "lb-10000",
+      "position": {
+        "x": 60.3,
+        "y": 60,
+        "basis": "image-pixel"
+      },
+      "source": "auto"
+    },
+    {
+      "id": "mk-8000",
+      "kind": "ladderMark",
+      "revision": 1,
+      "supersedes": null,
+      "laneId": "lane-0",
+      "ladderBandId": "lb-8000",
+      "position": {
+        "x": 60.5,
+        "y": 96.8,
+        "basis": "image-pixel"
+      },
+      "source": "auto"
+    },
+    {
+      "id": "mk-6000",
+      "kind": "ladderMark",
+      "revision": 1,
+      "supersedes": null,
+      "laneId": "lane-0",
+      "ladderBandId": "lb-6000",
+      "position": {
+        "x": 60.8,
+        "y": 144.3,
+        "basis": "image-pixel"
+      },
+      "source": "auto"
+    },
+    {
+      "id": "mk-5000",
+      "kind": "ladderMark",
+      "revision": 1,
+      "supersedes": null,
+      "laneId": "lane-0",
+      "ladderBandId": "lb-5000",
+      "position": {
+        "x": 61,
+        "y": 174.4,
+        "basis": "image-pixel"
+      },
+      "source": "auto"
+    },
+    {
+      "id": "mk-4000",
+      "kind": "ladderMark",
+      "revision": 1,
+      "supersedes": null,
+      "laneId": "lane-0",
+      "ladderBandId": "lb-4000",
+      "position": {
+        "x": 61.3,
+        "y": 211.2,
+        "basis": "image-pixel"
+      },
+      "source": "auto"
+    },
+    {
+      "id": "mk-3000",
+      "kind": "ladderMark",
+      "revision": 1,
+      "supersedes": null,
+      "laneId": "lane-0",
+      "ladderBandId": "lb-3000",
+      "position": {
+        "x": 61.6,
+        "y": 258.7,
+        "basis": "image-pixel"
+      },
+      "source": "auto"
+    },
+    {
+      "id": "mk-2000",
+      "kind": "ladderMark",
+      "revision": 1,
+      "supersedes": null,
+      "laneId": "lane-0",
+      "ladderBandId": "lb-2000",
+      "position": {
+        "x": 62.1,
+        "y": 325.6,
+        "basis": "image-pixel"
+      },
+      "source": "auto"
+    },
+    {
+      "id": "mk-1500",
+      "kind": "ladderMark",
+      "revision": 1,
+      "supersedes": null,
+      "laneId": "lane-0",
+      "ladderBandId": "lb-1500",
+      "position": {
+        "x": 62.4,
+        "y": 373.1,
+        "basis": "image-pixel"
+      },
+      "source": "auto"
+    },
+    {
+      "id": "mk-1000",
+      "kind": "ladderMark",
+      "revision": 1,
+      "supersedes": null,
+      "laneId": "lane-0",
+      "ladderBandId": "lb-1000",
+      "position": {
+        "x": 62.8,
+        "y": 440,
+        "basis": "image-pixel"
+      },
+      "source": "auto"
+    },
+    {
+      "id": "mk-500",
+      "kind": "ladderMark",
+      "revision": 1,
+      "supersedes": null,
+      "laneId": "lane-0",
+      "ladderBandId": "lb-500",
+      "position": {
+        "x": 63.6,
+        "y": 554.4,
+        "basis": "image-pixel"
+      },
+      "source": "auto"
+    },
+    {
+      "id": "b1-1",
+      "kind": "bandCenter",
+      "revision": 1,
+      "supersedes": null,
+      "laneId": "lane-1",
+      "position": {
+        "x": 150.3,
+        "y": 180,
+        "basis": "image-pixel"
+      },
+      "intensity": 0.55,
+      "halfWidthPx": 4,
+      "flags": [],
+      "source": "auto"
+    },
+    {
+      "id": "b1-2",
+      "kind": "bandCenter",
+      "revision": 1,
+      "supersedes": null,
+      "laneId": "lane-1",
+      "position": {
+        "x": 150.5,
+        "y": 330,
+        "basis": "image-pixel"
+      },
+      "intensity": 0.62,
+      "halfWidthPx": 4,
+      "flags": [
+        "tailing"
+      ],
+      "source": "auto"
+    },
+    {
+      "id": "b1-3",
+      "kind": "bandCenter",
+      "revision": 1,
+      "supersedes": null,
+      "laneId": "lane-1",
+      "position": {
+        "x": 150.7,
+        "y": 445,
+        "basis": "image-pixel"
+      },
+      "intensity": 0.5,
+      "halfWidthPx": 3.5,
+      "flags": [],
+      "source": "auto"
+    },
+    {
+      "id": "b2-1",
+      "kind": "bandCenter",
+      "revision": 1,
+      "supersedes": null,
+      "laneId": "lane-2",
+      "position": {
+        "x": 240,
+        "y": 211,
+        "basis": "image-pixel"
+      },
+      "intensity": 0.7,
+      "halfWidthPx": 4,
+      "flags": [],
+      "source": "auto"
+    },
+    {
+      "id": "b2-2",
+      "kind": "bandCenter",
+      "revision": 1,
+      "supersedes": null,
+      "laneId": "lane-2",
+      "position": {
+        "x": 240,
+        "y": 300,
+        "basis": "image-pixel"
+      },
+      "intensity": 1,
+      "halfWidthPx": 6,
+      "flags": [
+        "saturated"
+      ],
+      "source": "auto"
+    },
+    {
+      "id": "b2-3",
+      "kind": "bandCenter",
+      "revision": 1,
+      "supersedes": null,
+      "laneId": "lane-2",
+      "position": {
+        "x": 240,
+        "y": 500,
+        "basis": "image-pixel"
+      },
+      "intensity": 0.45,
+      "halfWidthPx": 3,
+      "flags": [],
+      "source": "auto"
+    },
+    {
+      "id": "b3-1",
+      "kind": "bandCenter",
+      "revision": 1,
+      "supersedes": null,
+      "laneId": "lane-3",
+      "position": {
+        "x": 330.4,
+        "y": 258,
+        "basis": "image-pixel"
+      },
+      "intensity": 0.6,
+      "halfWidthPx": 4,
+      "flags": [],
+      "source": "auto"
+    },
+    {
+      "id": "b3-2",
+      "kind": "bandCenter",
+      "revision": 1,
+      "supersedes": null,
+      "laneId": "lane-3",
+      "position": {
+        "x": 330.5,
+        "y": 340,
+        "basis": "image-pixel"
+      },
+      "intensity": 0.58,
+      "halfWidthPx": 3.5,
+      "flags": [
+        "overlap"
+      ],
+      "source": "auto"
+    },
+    {
+      "id": "b3-3",
+      "kind": "bandCenter",
+      "revision": 1,
+      "supersedes": null,
+      "laneId": "lane-3",
+      "position": {
+        "x": 330.5,
+        "y": 346,
+        "basis": "image-pixel"
+      },
+      "intensity": 0.55,
+      "halfWidthPx": 3.5,
+      "flags": [
+        "overlap"
+      ],
+      "source": "auto"
+    },
+    {
+      "id": "b3-4",
+      "kind": "bandCenter",
+      "revision": 1,
+      "supersedes": null,
+      "laneId": "lane-3",
+      "position": {
+        "x": 331,
+        "y": 590,
+        "basis": "image-pixel"
+      },
+      "intensity": 0.4,
+      "halfWidthPx": 3,
+      "flags": [],
+      "source": "auto"
+    },
+    {
+      "id": "b4-1",
+      "kind": "bandCenter",
+      "revision": 1,
+      "supersedes": null,
+      "laneId": "lane-4",
+      "position": {
+        "x": 420.8,
+        "y": 150,
+        "basis": "image-pixel"
+      },
+      "intensity": 0.6,
+      "halfWidthPx": 4,
+      "flags": [],
+      "source": "auto"
+    },
+    {
+      "id": "b4-2",
+      "kind": "bandCenter",
+      "revision": 1,
+      "supersedes": null,
+      "laneId": "lane-4",
+      "position": {
+        "x": 422.7,
+        "y": 420,
+        "basis": "image-pixel"
+      },
+      "intensity": 0.5,
+      "halfWidthPx": 3.5,
+      "flags": [],
+      "source": "auto"
+    }
+  ]
+}

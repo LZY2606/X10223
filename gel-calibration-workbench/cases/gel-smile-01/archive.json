@@ -1,0 +1,54 @@
+{
+  "description": "反例档案：基线冻结后，每个变体只改动一个直接来源，检验影响是否被限制在正确范围",
+  "variants": [
+    {
+      "id": "rotated-image",
+      "title": "旋转图像：拍摄方向 0°→90°",
+      "mutation": { "type": "image-orientation", "imageId": "img-baseline", "orientationDeg": 90 },
+      "expectation": "像素级来源不变，分子量计算身份完全一致；旋转只影响显示层",
+      "judgmentCode": "ROTATION_DISPLAY_ONLY"
+    },
+    {
+      "id": "curved-lanes",
+      "title": "弯曲泳道：“微笑”漂移放大 0.012→0.45",
+      "mutation": { "type": "lane-smile", "amplitude": 0.45 },
+      "expectation": "同一像素高度在不同泳道对应不同分子量；局部标尺必须带有效区域",
+      "judgmentCode": "SMILE_LOCAL_RULER_REQUIRED"
+    },
+    {
+      "id": "ladder-missing-band",
+      "title": "ladder 缺带：移除 mk-3000",
+      "mutation": { "type": "remove-ladder-mark", "markId": "mk-3000" },
+      "expectation": "仅插值段跨越 mk-3000 的泳道推断受影响，其余计算身份不变",
+      "judgmentCode": "LADDER_GAP_LOCALIZED"
+    },
+    {
+      "id": "saturated-region",
+      "title": "饱和区：b1-1 强度 0.55→1.00",
+      "mutation": { "type": "saturate-band", "bandId": "b1-1" },
+      "expectation": "饱和条带只能标为候选或区间，不得给点估计",
+      "judgmentCode": "SATURATION_INTERVAL_ONLY"
+    },
+    {
+      "id": "overlapping-bands",
+      "title": "两条带重叠：b1-2 移至与 b1-3 相距 2px",
+      "mutation": { "type": "move-band", "bandId": "b1-2", "newY": 443.0 },
+      "expectation": "重叠无法唯一决定时保留全部合法候选，分子量只给区间",
+      "judgmentCode": "OVERLAP_KEEP_ALL_CANDIDATES"
+    },
+    {
+      "id": "non-monotonic-ruler",
+      "title": "非单调标尺：mk-3000 错挂 lb-2000",
+      "mutation": { "type": "rewire-ladder-mark", "markId": "mk-3000", "ladderBandId": "lb-2000" },
+      "expectation": "标尺非单调即语义无解，给出带位置的诊断，不得用默认值伪装成功",
+      "judgmentCode": "RULER_NON_MONOTONIC"
+    },
+    {
+      "id": "post-revision-local-invalidation",
+      "title": "修订后局部失效：参数 v2 下修订 b2-2 中心",
+      "mutation": { "type": "amend-band", "bandId": "b2-2", "newY": 306.5, "atParamVersion": "v2" },
+      "expectation": "仅 lane-2 的 MW_INFER 失效重算，其余计算身份逐字节一致",
+      "judgmentCode": "LOCAL_INVALIDATION_SCOPED"
+    }
+  ]
+}

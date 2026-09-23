@@ -1,0 +1,20 @@
+{
+  "caseId": "gel-smile-01",
+  "title": "胶道标尺：电泳条带、泳道弯曲与分子量校准工作台 · 离线案例包",
+  "narrative": "分子实验室为原始凝胶图像标出 ladder、lane 和 band，比较自动候选与人工修订后的分子量推断",
+  "units": { "size": "bp", "coordinate": "px", "exposure": "ms" },
+  "basis": {
+    "pixel": "image-pixel：原点为原始采集图左上角，+x 向右，+y 向下（迁移方向）",
+    "migration": "lane-arc-px：沿泳道中心线自加样孔起算的弧长"
+  },
+  "files": {
+    "materials": "materials.json",
+    "narrative": "narrative.json",
+    "archive": "archive.json",
+    "image": "images/gel-baseline.png"
+  },
+  "params": {
+    "v1": { "version": "v1", "interpolation": "piecewise-linear", "saturationThreshold": 0.98, "overlapResolutionPx": 8, "budgetOps": 100000 },
+    "v2": { "version": "v2", "interpolation": "global-linear-fit", "saturationThreshold": 0.98, "overlapResolutionPx": 8, "budgetOps": 100000 }
+  }
+}

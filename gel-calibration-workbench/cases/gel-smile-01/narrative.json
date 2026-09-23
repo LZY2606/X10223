@@ -1,0 +1,40 @@
+{
+  "description": "案例叙事：初始导入 → 自动候选 → 参数修订 → 局部源数据改动 → 互相冲突的人工决定",
+  "steps": [
+    {
+      "kind": "PARAM_REVISION",
+      "payload": {
+        "to": "v2",
+        "reason": "审阅者将插值方法由 piecewise-linear 修订为 global-linear-fit",
+        "reviewer": "reviewer-chen"
+      }
+    },
+    {
+      "kind": "SOURCE_AMENDMENT",
+      "payload": {
+        "bandId": "b2-2",
+        "newY": 306.5,
+        "reason": "人工核对原图后修订饱和条带中心（仅应影响 lane-2 的局部分子量推断）",
+        "reviewer": "reviewer-chen"
+      }
+    },
+    {
+      "kind": "DECISION_ACCEPT",
+      "payload": {
+        "bandId": "b3-2",
+        "candidateId": "b3-2~distinct",
+        "reviewer": "reviewer-chen",
+        "note": "接受“两条独立带”候选：340/346 px 应为 2100/1900 bp 附近两条带"
+      }
+    },
+    {
+      "kind": "DECISION_ACCEPT",
+      "payload": {
+        "bandId": "b3-2",
+        "candidateId": "b3-2~merged:b3-3",
+        "reviewer": "reviewer-wu",
+        "note": "接受“单条带边缘”候选：与 b3-3 实为同一条带"
+      }
+    }
+  ]
+}
