@@ -1,0 +1,24 @@
+{
+  "name": "gel-lane-ruler-bench",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "胶道标尺：电泳条带、泳道弯曲与分子量校准工作台（离线）",
+  "scripts": {
+    "dev": "node --experimental-strip-types server/dev.ts",
+    "build": "tsc --noEmit && vite build",
+    "start": "cross-env NODE_ENV=production node --experimental-strip-types server/prod.ts",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.4.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^24.3.0",
+    "cross-env": "^7.0.3",
+    "typescript": "~5.8.3",
+    "vite": "^7.1.0",
+    "vitest": "^3.2.4"
+  }
+}
