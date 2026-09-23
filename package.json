@@ -1,0 +1,26 @@
+{
+  "name": "electrophoresis-gel-bench",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "胶道标尺：电泳条带、泳道弯曲与分子量校准工作台",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "seed": "tsx src/tools/build-case.ts",
+    "start": "vite"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^26.6.2",
+    "vitest": "^4.1.11"
+  }
+}
