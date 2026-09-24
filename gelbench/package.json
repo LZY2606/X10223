@@ -1,0 +1,21 @@
+{
+  "name": "gelbench",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server/dev-server.ts",
+    "test": "vitest",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.11.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^24.13.6",
+    "typescript": "~5.8",
+    "vite": "^7.3.6",
+    "vitest": "^3.2.7"
+  }
+}
