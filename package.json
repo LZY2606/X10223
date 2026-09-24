@@ -1,0 +1,26 @@
+{
+  "name": "gel-ruler-workbench",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "胶道标尺：电泳条带、泳道弯曲与分子量校准工作台（离线、可重放、事件溯源）",
+  "scripts": {
+    "gen:pack": "tsx tools/gen-pack.ts",
+    "postinstall": "tsx tools/gen-pack.ts",
+    "dev": "vite --host 127.0.0.1 --port 5342 --strictPort",
+    "build": "tsc -p tsconfig.json --noEmit && vite build",
+    "test": "vitest",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.0",
+    "vitest": "^2.1.8"
+  }
+}
