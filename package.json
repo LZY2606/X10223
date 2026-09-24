@@ -1,0 +1,18 @@
+{
+  "name": "gel-scale-workbench",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node src/server/index.ts",
+    "test": "vitest",
+    "build": "vite build",
+    "casepack": "node scripts/build-casepack.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.6.0",
+    "vite": "^6.0.0",
+    "vitest": "^3.0.0"
+  }
+}
