@@ -1,0 +1,27 @@
+{
+  "name": "gel-lane-calibration-workbench",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5342 --strictPort",
+    "build": "tsc --noEmit && vite build",
+    "test": "vitest",
+    "casepack": "vite-node scripts/build-casepack.ts",
+    "postinstall": "node scripts/postinstall.mjs"
+  },
+  "dependencies": {
+    "pngjs": "^7.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10",
+    "vite-node": "^2.1.5",
+    "vitest": "^2.1.5",
+    "@types/node": "^22.9.0",
+    "@types/pngjs": "^6.0.5"
+  }
+}
