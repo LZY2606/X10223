@@ -1,0 +1,48 @@
+{
+  "format": "gel-casepack/1",
+  "title": "胶道标尺：电泳条带、泳道弯曲与分子量校准工作台",
+  "narrative": "分子实验室为原始凝胶图像标出 ladder、lane 和 band，比较自动候选与人工修订后的分子量推断。基线完整保留原图、拍摄方向、曝光、ladder 标称值、lane 边界与条带中心的像素级来源；随后安排一次参数修订、一次只影响局部依赖的源数据改动和一次互相冲突的人工决定。",
+  "image": {
+    "width": 480,
+    "height": 360,
+    "smile_k": 0.00045,
+    "y_for_size": { "top_bp": 10000, "bottom_bp": 500, "y_top": 30, "y_bottom": 330 },
+    "lanes": [
+      { "lane_index": 0, "role": "ladder", "x0": 20, "x1": 60 },
+      { "lane_index": 1, "role": "sample", "x0": 90, "x1": 130 },
+      { "lane_index": 2, "role": "sample", "x0": 160, "x1": 200 },
+      { "lane_index": 3, "role": "sample", "x0": 230, "x1": 270 },
+      { "lane_index": 4, "role": "sample", "x0": 300, "x1": 340 },
+      { "lane_index": 5, "role": "sample", "x0": 370, "x1": 410 }
+    ]
+  },
+  "orientation": { "rotation_deg": 0, "wells": "top" },
+  "exposure": { "time_ms": 250, "gain": 1.0 },
+  "ladder_nominal": { "sizes_bp": [10000, 8000, 6000, 5000, 4000, 3000, 2000, 1500, 1000, 500], "unit": "bp" },
+  "ladder_sizes_present": [10000, 8000, 6000, 5000, 4000, 3000, 2000, 1500, 1000, 500],
+  "sample_bands": [
+    { "lane": 1, "size_bp": 8000, "intensity": 190 },
+    { "lane": 1, "size_bp": 3500, "intensity": 170 },
+    { "lane": 1, "size_bp": 1200, "intensity": 150 },
+    { "lane": 2, "size_bp": 6000, "intensity": 300, "saturated": true },
+    { "lane": 2, "size_bp": 2500, "intensity": 160 },
+    { "lane": 2, "size_bp": 900, "intensity": 140 },
+    { "lane": 3, "size_bp": 5000, "intensity": 180 },
+    { "lane": 3, "size_bp": 2000, "intensity": 160 },
+    { "lane": 3, "size_bp": 700, "intensity": 140 },
+    { "lane": 4, "size_bp": 3000, "intensity": 170 },
+    { "lane": 4, "size_bp": 1250, "intensity": 150 },
+    { "lane": 4, "size_bp": 1180, "intensity": 150 },
+    { "lane": 5, "size_bp": 9000, "intensity": 180 },
+    { "lane": 5, "size_bp": 4000, "intensity": 160 },
+    { "lane": 5, "size_bp": 800, "intensity": 150, "tailing": true }
+  ],
+  "script": [
+    { "op": "import_baseline", "note": "初始导入：原图、拍摄方向、曝光、ladder 标称值、lane 边界与条带中心均保留像素级来源" },
+    { "op": "compute", "params": "params-v1", "note": "自动候选生成" },
+    { "op": "revise_params", "to": { "overlap_min_sep_px": 12 }, "note": "参数修订：重叠判定阈值 8px → 12px" },
+    { "op": "amend_source", "lane": 3, "band_size_bp": 2000, "dy_px": 6, "note": "源数据改动：仅修订 lane-3 一个条带中心，检验局部失效" },
+    { "op": "decide", "reviewer": "reviewer-1", "action": "accept", "target_lane": 1, "target_size_bp": 3500, "note": "人工决定：接受自动候选" },
+    { "op": "decide", "reviewer": "reviewer-2", "action": "reject", "target_lane": 1, "target_size_bp": 3500, "note": "互相冲突的人工决定：同一候选被否决，产生分支" }
+  ]
+}
