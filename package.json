@@ -1,0 +1,19 @@
+{
+  "name": "gel-calibrator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "胶道标尺：电泳条带、泳道弯曲与分子量校准工作台",
+  "scripts": {
+    "postinstall": "node --experimental-strip-types scripts/build-casepack.ts",
+    "build:casepack": "node --experimental-strip-types scripts/build-casepack.ts",
+    "test": "vitest run",
+    "dev": "vite",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vite": "^6.0.7",
+    "vitest": "^3.0.4"
+  }
+}
