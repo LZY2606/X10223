@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>胶道标尺 · 电泳条带与分子量校准工作台</title>
+    <style>
+      :root { color-scheme: dark; }
+      body { margin: 0; font-family: "SF Mono", Menlo, Consolas, monospace; background: #14171c; color: #d7dde6; font-size: 13px; }
+      header { padding: 8px 14px; background: #1c2129; border-bottom: 1px solid #2c333f; display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+      header h1 { font-size: 14px; margin: 0; color: #8fd3ff; }
+      header .meta { color: #7c8794; font-size: 12px; }
+      button { background: #2a3text1f3; }
+      button, select, input[type="text"] { background: #232a34; color: #d7dde6; border: 1px solid #3a4452; border-radius: 4px; padding: 3px 9px; font: inherit; cursor: pointer; }
+      button:hover { background: #2e3745; }
+      button.primary { border-color: #4d8fc4; color: #9fd6ff; }
+      #layout { display: grid; grid-template-columns: minmax(560px, 1.4fr) minmax(380px, 1fr); gap: 0; height: calc(100vh - 41px); }
+      #left { overflow: auto; padding: 10px; border-right: 1px solid #2c333f; }
+      #right { overflow: auto; padding: 10px; display: flex; flex-direction: column; gap: 10px; }
+      canvas { background: #000; image-rendering: pixelated; border: 1px solid #2c333f; cursor: crosshair; max-width: 100%; }
+      .panel { background: #1b2028; border: 1px solid #2c333f; border-radius: 6px; padding: 8px 10px; }
+      .panel h2 { font-size: 12px; margin: 0 0 6px; color: #8fd3ff; text-transform: uppercase; letter-spacing: 0.06em; }
+      .kv { display: grid; grid-template-columns: 130px 1fr; gap: 2px 8px; }
+      .kv .k { color: #7c8794; }
+      .mw-link { color: #ffd479; cursor: pointer; text-decoration: underline dotted; }
+      .ev { border-left: 3px solid #3a4452; padding: 3px 8px; margin: 3px 0; cursor: pointer; }
+      .ev:hover { background: #232a34; }
+      .ev.active { border-color: #ffd479; background: #26231a; }
+      .ev .t { color: #7c8794; font-size: 11px; }
+      .diag-warn { color: #ffcf6e; } .diag-err { color: #ff8f8f; }
+      .status-value { color: #9fe8a9; } .status-interval { color: #ffcf6e; } .status-candidates { color: #ffb26e; } .status-invalid { color: #ff8f8f; }
+      #replay-banner { display: none; background: #3a2f14; color: #ffd479; padding: 4px 10px; border-radius: 4px; }
+      .arch { border: 1px solid #2c333f; border-radius: 6px; padding: 6px 8px; margin: 4px 0; }
+      .arch h3 { margin: 0 0 4px; font-size: 12px; color: #c5a3ff; }
+      table { border-collapse: collapse; width: 100%; }
+      td, th { border: 1px solid #2c333f; padding: 2px 6px; text-align: left; font-size: 12px; }
+      .muted { color: #7c8794; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>胶道标尺 · 电泳条带、泳道弯曲与分子量校准工作台</h1>
+      <span class="meta" id="hdr-meta"></span>
+      <span id="replay-banner"></span>
+      <span style="flex:1"></span>
+      <button id="btn-live">回到最新</button>
+      <button id="btn-export" class="primary">导出档案</button>
+      <label style="cursor:pointer"><input type="file" id="file-import" style="display:none" />导入档案</label>
+      <button id="btn-reset">重置样例</button>
+    </header>
+    <div id="layout">
+      <div id="left">
+        <canvas id="gel" width="640" height="480"></canvas>
+        <div class="panel" id="selection-panel" style="margin-top:8px"><h2>条带 / 分子量来源</h2><div id="selection-body" class="muted">点击画布上的条带查看分子量推断与来源。</div></div>
+      </div>
+      <div id="right">
+        <div class="panel"><h2>参数版本</h2><div id="params-body"></div></div>
+        <div class="panel"><h2>诊断（带位置，不以空值伪装成功）</h2><div id="diag-body"></div></div>
+        <div class="panel" style="max-height:300px;overflow:auto"><h2>事件历史（点击回到当时版本）</h2><div id="events-body"></div></div>
+        <div class="panel" style="max-height:340px;overflow:auto"><h2>反例档案（采纳与未采纳并存）</h2><div id="archive-body"></div></div>
+      </div>
+    </div>
+    <script type="module" src="/src/ui/main.ts"></script>
+  </body>
+</html>
