@@ -1,0 +1,32 @@
+{
+  "name": "gel-ladder-workbench",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "胶道标尺：电泳条带、泳道弯曲与分子量校准工作台（离线案例包）",
+  "scripts": {
+    "predev": "tsx src/tools/gen-case.ts",
+    "pretest": "tsx src/tools/gen-case.ts",
+    "dev": "vite --host 127.0.0.1 --port 5342 --strictPort",
+    "build": "tsc --noEmit && vite build",
+    "test": "vitest",
+    "gen-case": "tsx src/tools/gen-case.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.4.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vite": "^6.3.5",
+    "vitest": "^3.0.7"
+  }
+}
