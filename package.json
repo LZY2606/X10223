@@ -1,0 +1,18 @@
+{
+  "name": "gel-ruler-workbench",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Gel ruler workbench: electrophoresis band, lane-curvature and molecular-weight calibration with pixel-level provenance",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.6.0",
+    "vite": "^7.0.0",
+    "vitest": "^3.0.0"
+  }
+}

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>胶道标尺 · 电泳条带 / 泳道弯曲 / 分子量校准工作台</title>
+    <style>
+      :root { color-scheme: dark; }
+      body { margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background: #14171c; color: #d7dde6; font-size: 13px; }
+      header { padding: 8px 12px; background: #1c212b; border-bottom: 1px solid #2c3340; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+      header h1 { font-size: 14px; margin: 0 12px 0 0; color: #8fd0ff; }
+      button, select { background: #2a3140; color: #d7dde6; border: 1px solid #3a4356; border-radius: 4px; padding: 4px 10px; font: inherit; cursor: pointer; }
+      button:hover { background: #35405a; }
+      main { display: grid; grid-template-columns: minmax(420px, 1.2fr) 1fr; gap: 8px; padding: 8px; }
+      .panel { background: #1a1f28; border: 1px solid #2c3340; border-radius: 6px; padding: 8px; }
+      .panel h2 { font-size: 12px; margin: 0 0 6px; color: #9fb4d0; text-transform: uppercase; letter-spacing: 0.06em; }
+      canvas { display: block; background: #000; image-rendering: pixelated; max-width: 100%; }
+      table { border-collapse: collapse; width: 100%; }
+      td, th { border-bottom: 1px solid #262d3a; padding: 3px 6px; text-align: left; white-space: nowrap; }
+      tr[data-band] { cursor: pointer; }
+      tr[data-band]:hover { background: #232b3a; }
+      tr.selected { background: #2b3a55; }
+      .status-value { color: #7ee787; } .status-interval { color: #ffd866; }
+      .status-candidates { color: #ffb86c; } .status-invalid { color: #ff7b72; }
+      #events { max-height: 260px; overflow: auto; }
+      #events li { cursor: pointer; padding: 2px 4px; border-radius: 3px; list-style: none; }
+      #events li:hover { background: #232b3a; }
+      #events li.current { outline: 1px solid #8fd0ff; }
+      #events ul { margin: 0; padding: 0; }
+      .muted { color: #7d8798; }
+      .diag { color: #ff9d8a; }
+      #detail { white-space: pre-wrap; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>胶道标尺工作台</h1>
+      <select id="branch"></select>
+      <button id="btn-seed">载入离线案例包</button>
+      <button id="btn-analyze">运行分析</button>
+      <button id="btn-export">导出项目包</button>
+      <label style="display:inline-flex;align-items:center;gap:4px;">导入 <input type="file" id="file-import" accept=".json,.gsbpack" /></label>
+      <span id="headline" class="muted"></span>
+    </header>
+    <main>
+      <section class="panel">
+        <h2>复核视图：原图 + lane 曲线 + 条带轮廓 + ladder 点</h2>
+        <canvas id="gel"></canvas>
+        <div id="gel-caption" class="muted"></div>
+      </section>
+      <section style="display:flex;flex-direction:column;gap:8px;">
+        <div class="panel">
+          <h2>拟合残差与插值段</h2>
+          <canvas id="residuals" width="520" height="180"></canvas>
+          <div id="detail" class="muted">点击任意分子量查看 ladder 点与插值段来源。</div>
+        </div>
+        <div class="panel">
+          <h2>条带与分子量推断（单位 bp，坐标基准 image-top-left-y-down / px）</h2>
+          <table id="bands"><thead><tr>
+            <th>lane</th><th>y (px)</th><th>分子量 (bp)</th><th>状态</th><th>有效区间 y</th><th>决定</th>
+          </tr></thead><tbody></tbody></table>
+          <div style="margin-top:6px;">
+            <button id="btn-accept">接受</button>
+            <button id="btn-reject">否定</button>
+            <button id="btn-adjust">参数修订</button>
+          </div>
+        </div>
+        <div class="panel">
+          <h2>事件时间线（点击回到历史结论）</h2>
+          <div id="events"></div>
+        </div>
+        <div class="panel">
+          <h2>诊断</h2>
+          <div id="diags"></div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/web/main.ts"></script>
+  </body>
+</html>
