@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>胶道标尺 · 电泳条带、泳道弯曲与分子量校准工作台</title>
+    <style>
+      :root {
+        --bg: #101418;
+        --panel: #1a2129;
+        --panel2: #222b35;
+        --ink: #dce4ec;
+        --dim: #8fa0b3;
+        --accent: #4cc2ff;
+        --ok: #5fd08a;
+        --warn: #ffb84d;
+        --bad: #ff6d6d;
+        --line: #33404f;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--bg); color: var(--ink); font: 13px/1.5 "SF Mono", Menlo, Consolas, monospace; }
+      header { padding: 10px 16px; background: var(--panel); border-bottom: 1px solid var(--line); display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+      header h1 { font-size: 15px; margin: 0; color: var(--accent); }
+      header .meta { color: var(--dim); font-size: 12px; }
+      button, select { background: var(--panel2); color: var(--ink); border: 1px solid var(--line); border-radius: 4px; padding: 4px 10px; font: inherit; cursor: pointer; }
+      button:hover { border-color: var(--accent); }
+      main { display: grid; grid-template-columns: minmax(520px, 1.4fr) minmax(380px, 1fr); gap: 12px; padding: 12px 16px; }
+      .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; margin-bottom: 12px; }
+      .panel h2 { font-size: 13px; margin: 0 0 8px; color: var(--accent); font-weight: 600; }
+      table { border-collapse: collapse; width: 100%; font-size: 12px; }
+      th, td { text-align: left; padding: 3px 6px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+      th { color: var(--dim); font-weight: 500; }
+      tr.sel td { background: #24384a; }
+      tr[data-band] { cursor: pointer; }
+      tr[data-band]:hover td { background: #1f2d3c; }
+      .tag { display: inline-block; padding: 0 6px; border-radius: 3px; font-size: 11px; border: 1px solid var(--line); }
+      .tag.ok { color: var(--ok); border-color: var(--ok); }
+      .tag.candidate, .tag.interval { color: var(--warn); border-color: var(--warn); }
+      .tag.invalid, .tag.failed { color: var(--bad); border-color: var(--bad); }
+      .tag.accepted { color: var(--ok); }
+      .tag.rejected { color: var(--bad); }
+      .kv { display: grid; grid-template-columns: 150px 1fr; gap: 2px 8px; font-size: 12px; }
+      .kv dt { color: var(--dim); }
+      .kv dd { margin: 0; word-break: break-all; }
+      .events { max-height: 220px; overflow: auto; }
+      .events li { cursor: pointer; padding: 2px 4px; border-radius: 3px; list-style: none; }
+      .events li:hover { background: #1f2d3c; }
+      .events li.cur { background: #24384a; }
+      .events ul { margin: 0; padding: 0; }
+      .diag { color: var(--bad); font-size: 12px; }
+      .reason { color: var(--warn); }
+      svg text { font: 10px monospace; fill: var(--dim); }
+      .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+      .muted { color: var(--dim); }
+      a { color: var(--accent); }
+    </style>
+  </head>
+  <body>
+    <header id="hdr"></header>
+    <main id="app"></main>
+    <script type="module" src="/src/ui/main.ts"></script>
+  </body>
+</html>
