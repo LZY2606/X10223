@@ -1,0 +1,23 @@
+{
+  "name": "gel-ruler-evidence-workbench",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "离线电泳条带、泳道弯曲与分子量校准证据工作台",
+  "scripts": {
+    "dev": "tsx server/index.ts",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "vite build",
+    "cases:build": "tsx scripts/build-casepack.ts"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5"
+  }
+}
