@@ -1,0 +1,21 @@
+{
+  "name": "gel-ruler-workbench",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "胶道标尺：电泳条带、泳道弯曲与分子量校准工作台",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5342 --strictPort",
+    "build": "tsc -p tsconfig.json --noEmit && vite build",
+    "test": "vitest",
+    "server": "node server/standalone.cjs"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.8",
+    "@types/node": "^22.10.2",
+    "jsdom": "^25.0.1"
+  }
+}
