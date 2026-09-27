@@ -34,3 +34,6 @@ coverage/
 .vite/
 .turbo/
 *.tsbuildinfo
+
+# --- workbench local data (database & runtime blobs) ---
+data/
