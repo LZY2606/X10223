@@ -1,0 +1,26 @@
+{
+  "name": "gel-calibration-workbench",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "胶道标尺：电泳条带、泳道弯曲与分子量校准工作台（离线案例包）",
+  "scripts": {
+    "build:cases": "tsx scripts/build-cases.ts",
+    "dev": "vite",
+    "server": "tsx watch src/server/standalone.ts",
+    "build": "tsc --noEmit && vite build",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.8.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/node": "^22.10.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7",
+    "vitest": "^2.1.8"
+  }
+}
